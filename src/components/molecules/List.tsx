@@ -17,9 +17,7 @@ const List = ({list}) => {
 
   return (
     <View>
-      <ScrollView>
-        <FlatList data={list} renderItem={renderList} />
-      </ScrollView>
+      <FlatList data={list} renderItem={renderList} />
     </View>
   );
 };
