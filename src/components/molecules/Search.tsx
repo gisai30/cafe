@@ -3,9 +3,6 @@ import {TextInput, View} from 'react-native';
 
 const Search = ({_onChangeText, textToSearch, data, _setDataSort, value}) => {
   const sortData = () => {
-    // const dataSort = data.sort((a, b) => a.key - b.key);
-    // console.log(dataSort);
-    // _setDataSort(dataSort);
     let listFilter = [];
     data.forEach(e => {
       var re = new RegExp(textToSearch, 'gi');

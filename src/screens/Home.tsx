@@ -4,7 +4,7 @@ import {Button, Text, View} from 'react-native';
 const Home = ({navigation, route}) => {
   // const [session, setSession] = useState(false);
   const onStart = () => {
-    navigation.navigate('Login');
+    navigation.navigate('Main');
   };
   const onChangeConfig = e => {
     navigation.navigate('Config');
