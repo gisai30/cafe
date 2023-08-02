@@ -1,4 +1,5 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
+import text from '../../styles/text';
 
 const styles = StyleSheet.create({
   container: {
@@ -6,9 +7,7 @@ const styles = StyleSheet.create({
     paddingTop: 22,
   },
   item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
+    ...text,
   },
 });
 

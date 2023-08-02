@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Button, Text, View} from 'react-native';
+import ButtonStyle from '../components/atoms/ButtonStyle';
 
 const Home = ({navigation, route}) => {
   // const [session, setSession] = useState(false);

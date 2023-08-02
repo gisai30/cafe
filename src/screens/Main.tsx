@@ -1,6 +1,19 @@
 import {useState} from 'react';
-import {Button, FlatList, ScrollView, Text, View} from 'react-native';
+import {View} from 'react-native';
+import ButtonStyle from '../components/atoms/ButtonStyle';
 import ActiveTables from '../components/organisms/ActiveTable';
+import text from '../styles/text';
+
+const styles = {
+  button: {
+    color: text.color,
+    width: 200,
+    marginLeft: '25%',
+    marginRight: '25%',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+};
 
 const Main = () => {
   const [tables, setTables] = useState([]);
@@ -19,12 +32,19 @@ const Main = () => {
   };
 
   return (
-    <View>
-      <Text>Mesas</Text>
-      <View>
-        <Button title="Agregar +" onPress={onAddTable} />
-      </View>
+    <View
+      style={{
+        justifyContent: 'space-between',
+        height: '100%',
+      }}>
       <ActiveTables data={tables} _remove={removeElement} />
+      <View>
+        <ButtonStyle
+          title="Agregar +"
+          _onPress={onAddTable}
+          style={styles.button}
+        />
+      </View>
     </View>
   );
 };
