@@ -14,7 +14,6 @@ const Config = () => {
     setListSort(menu);
   }, []);
 
-  // <Text>{text}</Text>
   return (
     <View>
       <Search

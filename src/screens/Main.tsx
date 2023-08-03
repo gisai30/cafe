@@ -15,7 +15,7 @@ const styles = {
   },
 };
 
-const Main = () => {
+const Main = ({navigation, route}) => {
   const [tables, setTables] = useState([]);
   const [index, setIndex] = useState(0);
 
@@ -37,7 +37,12 @@ const Main = () => {
         justifyContent: 'space-between',
         height: '100%',
       }}>
-      <ActiveTables data={tables} _remove={removeElement} />
+      <ActiveTables
+        navigation={navigation}
+        route={route}
+        data={tables}
+        _remove={removeElement}
+      />
       <View>
         <ButtonStyle
           title="Agregar +"
