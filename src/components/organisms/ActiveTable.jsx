@@ -37,9 +37,9 @@ const ActiveTables = ({navigation, route, data, _remove, _changeTitle}) => {
           borderBottomColor: '#4a4a4a',
           backgroundColor: '#ffffff',
         }}>
-        <Text onPress={onChangeTitle} style={{flex: 1}}>
-          {item.title}
-        </Text>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Text onPress={onChangeTitle}>{item.title}</Text>
+        </View>
         <View
           style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
           <ButtonStyle
