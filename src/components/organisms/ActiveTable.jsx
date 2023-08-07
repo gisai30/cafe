@@ -4,11 +4,10 @@ import ButtonStyle from '../atoms/ButtonStyle';
 
 const styles = {};
 
-const ActiveTables = ({navigation, route, data, _remove}) => {
+const ActiveTables = ({navigation, route, data, _remove, _changeTitle}) => {
   const renderItems = e => {
     const {item} = e;
     const onPress = () => {
-      console.log('hola mundo');
       console.log(item.id);
     };
 
@@ -19,6 +18,7 @@ const ActiveTables = ({navigation, route, data, _remove}) => {
         params: {
           type: 'changeTitle',
           text: item.title,
+          key: item.id,
         },
       });
     };
@@ -53,7 +53,11 @@ const ActiveTables = ({navigation, route, data, _remove}) => {
   };
 
   useEffect(() => {
-    console.log(route.params);
+    // console.log(route.params);
+    if (route.params?.text) {
+      const params = route.params;
+      _changeTitle(params);
+    }
   }, [route.params?.text]);
 
   return <FlatList data={data} renderItem={renderItems}></FlatList>;

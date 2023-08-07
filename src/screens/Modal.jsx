@@ -4,27 +4,22 @@ const {View, Text} = require('react-native');
 const {default: ButtonStyle} = require('../components/atoms/ButtonStyle');
 
 const Modal = ({navigation, route}) => {
-  const {type} = route.params;
+  const {type, key} = route.params;
   const [value, setValue] = useState('');
-  const onChange = e => {
-    console.log(e);
-    setValue(e);
+  const children = {
+    changeTitle: <ChangeName _updateValue={setValue} />,
   };
-  const [children, setChildren] = useState({
-    changeTitle: <ChangeName setValue={onChange} value={value} />,
-  });
   const navigateBack = () => {
     navigation.navigate({
       name: 'Main',
-      params: {text: value},
+      params: {text: value, key: key},
       merge: true,
     });
   };
 
-  // {children[`${type}`]}
   return (
     <View style={{alignItems: 'center'}}>
-      <ChangeName setValue={onChange} value={value} />
+      {children[`${type}`]}
       <ButtonStyle
         title="Done"
         _onPress={navigateBack}

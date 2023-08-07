@@ -31,6 +31,12 @@ const Main = ({navigation, route}) => {
     setTables([...tables]);
   };
 
+  const onChangeTitle = params => {
+    const index = tables.findIndex(e => e.id == params.key);
+    tables[index].title = params.text;
+    setTables([...tables]);
+  };
+
   return (
     <View
       style={{
@@ -42,6 +48,7 @@ const Main = ({navigation, route}) => {
         route={route}
         data={tables}
         _remove={removeElement}
+        _changeTitle={onChangeTitle}
       />
       <View>
         <ButtonStyle
