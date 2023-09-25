@@ -9,6 +9,12 @@ const ActiveTables = ({navigation, route, data, _remove, _changeTitle}) => {
     const {item} = e;
     const onPress = () => {
       console.log(item.id);
+      navigation.navigate({
+        name: 'LocalTable',
+        params: {
+          tableId: item.id,
+        },
+      });
     };
 
     const onChangeTitle = () => {
@@ -53,7 +59,6 @@ const ActiveTables = ({navigation, route, data, _remove, _changeTitle}) => {
   };
 
   useEffect(() => {
-    // console.log(route.params);
     if (route.params?.text) {
       const params = route.params;
       _changeTitle(params);

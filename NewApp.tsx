@@ -6,6 +6,7 @@ import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import Main from './src/screens/Main';
 import Modal from './src/screens/Modal';
+import LocalTable from './src/screens/LocalTable';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ const NewApp = () => {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Config" component={Config} />
           <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="LocalTable" component={LocalTable} />
         </Stack.Group>
         <Stack.Group screenOptions={{presentation: 'modal'}}>
           <Stack.Screen name="Modal" component={Modal} />
